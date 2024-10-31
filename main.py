@@ -13,7 +13,11 @@ driver.get(base_url)
 driver.maximize_window()
 name_v = driver.find_element(By.ID, 'user-name')
 name_v.send_keys('standard_user')
-time.sleep(10)
-driver.close()
+pass_i = driver.find_element(By.XPATH, '//input[@id="password"]')
+pass_i.send_keys('secret_sauce')
+time.sleep(2)
+button_auth = driver.find_element(By.XPATH, '//input[@id="login-button"]')
+button_auth.click()
+
 
 
